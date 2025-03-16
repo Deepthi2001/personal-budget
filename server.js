@@ -6,9 +6,10 @@ const budgetData = require("./budget-data.json");
 const BudgetModel = require("./models/budget");
 
 app.use("/",express.static('public'));
+const mongoUrl = "mongodb+srv://saideepthi2001:Mongodb1@personalbudget.hqjgw.mongodb.net/";
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/personal-budget", {
+mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("Connected to MongoDB!!"))
